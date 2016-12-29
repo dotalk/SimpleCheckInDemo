@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR_Read</title>
+    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<input id="staffNum" type="text" name="staffNum">
+<a href="index/show"><div>查看数据</div></a>
+</body>
+<script>
+    //获得焦点
+    $(document).ready(
+            function () {
+                $("#staffNum")[0].focus();
+            }
+    );
+    $("#staffNum").change(function () {
+        var val = $("#staffNum").val();
+//            $("#show").html(val);
+        $.post("index/save", {data: val}, function (data, status) {
+            alert(data);
+            window.location.reload(true);
+        });
+    });
+</script>
+</html>
