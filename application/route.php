@@ -9,9 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
-Route::rule('/','Index/index','GET');
-Route::rule('index/save','index/Index/save','POST');
-Route::rule('index/show','index/Index/showData','GET');
+Route::rule('/','index/index','GET');
+Route::rule('index/save','index/index/save','POST');
+Route::rule('index/show','index/index/showData','GET');
 return [
     '__pattern__' => [
         'name' => '\w+',
